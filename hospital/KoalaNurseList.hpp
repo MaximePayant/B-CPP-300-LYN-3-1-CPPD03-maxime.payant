@@ -27,6 +27,8 @@ class KoalaNurseList
         KoalaNurseList *getFromID(int id);
         KoalaNurseList *remove(KoalaNurseList *koala);
         KoalaNurseList *removeFromID(int id);
+        KoalaNurse *getContent() const;
+        KoalaNurseList *getNext() const;
         void dump();
 };
 

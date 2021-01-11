@@ -6,7 +6,8 @@
 #include "KoalaDoctor.hpp"
 
 KoalaDoctor::KoalaDoctor(const std::string& name) :
-m_name(name)
+m_name(name),
+m_isWorking(false)
 {
     std::cout
         << "Dr."

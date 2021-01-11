@@ -25,8 +25,8 @@ void KoalaNurseList::append(KoalaNurseList *koala)
 {
     KoalaNurseList *tmp = this;
 
-    if (tmp == NULL)
-        tmp = koala;
+    if (tmp->m_value == NULL)
+        tmp->m_value = koala->m_value;
     else {
         while (tmp->m_next != NULL)
             tmp = tmp->m_next;
@@ -51,6 +51,7 @@ KoalaNurseList *KoalaNurseList::remove(KoalaNurseList *koala)
     KoalaNurseList *prev = this;
     KoalaNurseList *tmp = m_next;
 
+    koala->m_next = NULL;
     if (this == koala)
         return (m_next);
     while (tmp != koala) {
@@ -68,6 +69,7 @@ KoalaNurseList *KoalaNurseList::removeFromID(int id)
     KoalaNurseList *prev = this;
     KoalaNurseList *tmp = m_next;
 
+    getFromID(id)->m_next = NULL;
     if (m_value->getID() == id)
         return (m_next);
     while (tmp && tmp->m_value->getID() != id) {
@@ -78,6 +80,16 @@ KoalaNurseList *KoalaNurseList::removeFromID(int id)
     }
     prev->m_next = tmp->m_next;
     return (this);
+}
+
+KoalaNurse *KoalaNurseList::getContent() const
+{
+    return (m_value);
+}
+
+KoalaNurseList *KoalaNurseList::getNext() const
+{
+    return (m_next);
 }
 
 void KoalaNurseList::dump()
@@ -93,7 +105,8 @@ void KoalaNurseList::dump()
         if (tmp->m_next)
             std::cout << ", ";
         else
-            std::cout << "." << std::endl;
+            std::cout << ".";
         tmp = tmp->m_next;
     }
+    std::cout << std::endl;
 }
