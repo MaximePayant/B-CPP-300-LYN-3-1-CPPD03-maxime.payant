@@ -23,7 +23,7 @@ void cat_file(const char *filename)
 int main(int ac, char **av)
 {
     if (ac == 1)
-        std::cout << "my_cat: Usage: ./my_cat file [...]" << std::endl;
+        std::cerr << "my_cat: Usage: ./my_cat file [...]" << std::endl;
     for (int ctr = 1; av[ctr] != NULL; ctr += 1)
         cat_file(av[ctr]);
     return (0);
