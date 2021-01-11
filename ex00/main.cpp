@@ -5,7 +5,6 @@
 
 #include <iostream>
 #include <fstream>
-#include <vector>
 
 void cat_file(const char *filename)
 {
