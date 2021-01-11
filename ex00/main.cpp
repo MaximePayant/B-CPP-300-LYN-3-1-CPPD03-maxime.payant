@@ -15,8 +15,7 @@ void cat_file(const char *filename)
     if (!file)
         std::cerr << "my_cat: file: No such file or directory" << std::endl;
     else {
-        while (std::getline(file, str))
-            std::cout << str << std::endl;
+        std::cout << file.rdbuf();
         file.close();
     }
 }
