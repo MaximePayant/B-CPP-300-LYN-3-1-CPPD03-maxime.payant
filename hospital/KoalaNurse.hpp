@@ -25,6 +25,7 @@ class KoalaNurse
         KoalaNurse(int id);
         ~KoalaNurse();
 
+        int getID() const;
         void giveDrug(const std::string& drug, SickKoala *koala) const;
         const std::string readReport(const std::string& reportName) const;
         void timeCheck(void);

@@ -12,18 +12,18 @@ m_name(name)
 SickKoala::~SickKoala()
 {
     std::cout
-        << "Mr.["
+        << "Mr."
         << m_name
-        << "]: Kreooogg!! I'm cuuuured!"
+        << ": Kreooogg!! I'm cuuuured!"
         << std::endl;
 }
 
 void SickKoala::poke() const
 {
     std::cout
-        << "Mr.["
+        << "Mr."
         << m_name
-        << "]: Gooeeeeerrk!!"
+        << ": Gooeeeeerrk!!"
         << std::endl;
 }
 
@@ -31,21 +31,21 @@ bool SickKoala::takeDrug(const std::string& drug) const
 {
     if (drug == "Mars")
         std::cout
-            << "Mr.["
+            << "Mr."
             << m_name
-            << "]: Mars, and it kreogs!"
+            << ": Mars, and it kreogs!"
             << std::endl;
     else if (drug == "Kinder")
         std::cout
-            << "Mr.["
+            << "Mr."
             << m_name
-            << "]: There is a toy inside!"
+            << ": There is a toy inside!"
             << std::endl;
     else {
         std::cout
-            << "Mr.["
+            << "Mr."
             << m_name
-            << "]: Goerkreog!"
+            << ": Goerkreog!"
             << std::endl;
         return (false);
     }
@@ -54,12 +54,15 @@ bool SickKoala::takeDrug(const std::string& drug) const
 
 void SickKoala::overDrive(std::string str) const
 {
-    for (std::size_t check = 0; (check = str.find("Kreog", check)) != std::string::npos && check < str.size(); check += 1)
+    for (std::size_t check = 0
+    ;(check = str.find("Kreog", check)) != std::string::npos
+    && check < str.size()
+    ; check += 1)
         str = str.replace(check, 5, "1337");
     std::cout
-            << "Mr.["
+            << "Mr."
             << m_name
-            << "]: "
+            << ": "
             << str
             << std::endl;
 }

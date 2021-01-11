@@ -13,10 +13,15 @@ m_isWorking(false)
 KoalaNurse::~KoalaNurse()
 {
     std::cout
-        << "Nurse ["
+        << "Nurse "
         << m_id
-        << "]: Finally some rest!"
+        << ": Finally some rest!"
         << std::endl;
+}
+
+int KoalaNurse::getID() const
+{
+    return (m_id);
 }
 
 void KoalaNurse::giveDrug(const std::string& drug, SickKoala *koala) const
@@ -39,13 +44,13 @@ const std::string KoalaNurse::readReport(const std::string& reportName) const
     len = reportName.find_last_of('.') - offset;
     koala = reportName.substr((offset > 0 ? offset + 1 : offset), len - 1);
     std::cout
-        << "Nurse ["
+        << "Nurse "
         << m_id
-        << "]: Kreog! Mr.["
+        << ": Kreog! Mr."
         << koala
-        << "] needs a ["
+        << " needs a "
         << drug
-        << "]!"
+        << "!"
         << std::endl;
     return (file.close(), drug);
 }
@@ -54,17 +59,17 @@ void KoalaNurse::timeCheck(void)
 {
     if (m_isWorking) {
         std::cout
-            << "Nurse ["
+            << "Nurse "
             << m_id
-            << "]: Time to go home to my eucalyptus forest!"
+            << ": Time to go home to my eucalyptus forest!"
             << std::endl;
         m_isWorking = false;
     }
     else {
         std::cout
-            << "Nurse ["
+            << "Nurse "
             << m_id
-            << "]: Time to get to work!"
+            << ": Time to get to work!"
             << std::endl;
         m_isWorking = true;
     }

@@ -9,16 +9,21 @@ KoalaDoctor::KoalaDoctor(const std::string& name) :
 m_name(name)
 {
     std::cout
-        << "Dr.["
+        << "Dr."
         << m_name
-        << "]: I'm Dr.["
+        << ": I'm Dr."
         << m_name
-        << "]! How do you kreog?"
+        << "! How do you kreog?"
         << std::endl;
 }
 
 KoalaDoctor::~KoalaDoctor()
 {}
+
+const std::string& KoalaDoctor::getName() const
+{
+    return (m_name);
+}
 
 static void write_report(const std::string& filename)
 {
@@ -30,11 +35,11 @@ static void write_report(const std::string& filename)
 void KoalaDoctor::diagnose(const SickKoala *koala) const
 {
     std::cout
-        << "Dr.["
+        << "Dr."
         << m_name
-        << "]: So what's goerking you Mr.["
+        << ": So what's goerking you Mr."
         << koala->getName()
-        << "]?"
+        << "?"
         << std::endl;
     koala->poke();
     write_report(koala->getName() + ".report");
@@ -44,17 +49,17 @@ void KoalaDoctor::timeCheck(void)
 {
     if (m_isWorking) {
         std::cout
-            << "Dr.["
+            << "Dr."
             << m_name
-            << "]: Time to go home to my eucalyptus forest!"
+            << ": Time to go home to my eucalyptus forest!"
             << std::endl;
         m_isWorking = false;
     }
     else {
         std::cout
-            << "Dr.["
+            << "Dr."
             << m_name
-            << "]: Time to get to work!"
+            << ": Time to get to work!"
             << std::endl;
         m_isWorking = true;
     }

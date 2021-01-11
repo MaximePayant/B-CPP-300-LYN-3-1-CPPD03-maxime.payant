@@ -33,6 +33,7 @@ class KoalaDoctor
         KoalaDoctor(const std::string& name);
         ~KoalaDoctor();
 
+        const std::string& getName() const;
         void diagnose(const SickKoala *koala) const;
         void timeCheck();
 };
