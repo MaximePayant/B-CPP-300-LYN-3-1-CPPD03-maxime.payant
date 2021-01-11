@@ -6,9 +6,10 @@
 #ifndef KOALA_NURSE_HPP
 #define KOALA_NURSE_HPP
 
-#include "SickKoala.hpp"
 #include <iostream>
 #include <fstream>
+
+#include "SickKoala.hpp"
 
 class KoalaNurse
 {
@@ -18,6 +19,9 @@ class KoalaNurse
         bool m_isWorking;
 
     public:
+        KoalaNurse() = delete;
+        KoalaNurse(KoalaNurse const&) = delete;
+        KoalaNurse(KoalaNurse&&) = delete;
         KoalaNurse(int id);
         ~KoalaNurse();
 

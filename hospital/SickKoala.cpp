@@ -63,3 +63,8 @@ void SickKoala::overDrive(std::string str) const
             << str
             << std::endl;
 }
+
+const std::string& SickKoala::getName() const
+{
+    return (m_name);
+}

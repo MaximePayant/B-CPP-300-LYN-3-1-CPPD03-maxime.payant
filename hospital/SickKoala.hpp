@@ -16,11 +16,12 @@ class SickKoala
 
     public:
         SickKoala() = delete;
-        SickKoala(SickKoala const& ) = delete;
-        SickKoala(SickKoala&& ) = delete;
+        SickKoala(SickKoala const&) = delete;
+        SickKoala(SickKoala&&) = delete;
         SickKoala(const std::string& name);
         ~SickKoala();
 
+        const std::string& getName() const;
         void poke() const;
         bool takeDrug(const std::string& drug) const;
         void overDrive(std::string str) const;
