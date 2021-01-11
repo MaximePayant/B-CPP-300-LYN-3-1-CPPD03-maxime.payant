@@ -53,7 +53,7 @@ SickKoalaList *SickKoalaList::remove(SickKoalaList *koala)
 
     koala->m_next = NULL;
     if (this == koala)
-        return (m_next);
+        return (tmp);
     while (tmp != koala) {
         if (tmp == NULL)
             return (this);
@@ -71,7 +71,7 @@ SickKoalaList *SickKoalaList::removeFromName(const std::string& name)
 
     getFromName(name)->m_next = NULL;
     if (m_value->getName() == name)
-        return (m_next);
+        return (tmp);
     while (tmp && tmp->m_value->getName() != name) {
         if (tmp == NULL)
             return (this);

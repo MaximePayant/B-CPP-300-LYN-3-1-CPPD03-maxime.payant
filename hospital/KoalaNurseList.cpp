@@ -53,7 +53,7 @@ KoalaNurseList *KoalaNurseList::remove(KoalaNurseList *koala)
 
     koala->m_next = NULL;
     if (this == koala)
-        return (m_next);
+        return (tmp);
     while (tmp != koala) {
         if (tmp == NULL)
             return (this);
@@ -71,7 +71,7 @@ KoalaNurseList *KoalaNurseList::removeFromID(int id)
 
     getFromID(id)->m_next = NULL;
     if (m_value->getID() == id)
-        return (m_next);
+        return (tmp);
     while (tmp && tmp->m_value->getID() != id) {
         if (tmp == NULL)
             return (this);

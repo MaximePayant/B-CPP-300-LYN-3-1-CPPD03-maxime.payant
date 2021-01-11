@@ -73,14 +73,11 @@ void Hospital::run()
         nurse = (nurse->isEnd() ? m_nurseList : nurse->getNext());
         doctor = (doctor->isEnd() ? m_doctorList : doctor->getNext());
     }
-    for (SickKoalaList *tmp = m_koalaList; tmp != NULL; tmp = tmp->getNext())
-        m_koalaList = m_koalaList->remove(tmp);
     for (KoalaNurseList *tmp = m_nurseList; tmp != NULL; tmp = tmp->getNext())
         tmp->getContent()->timeCheck();
-    for (KoalaNurseList *tmp = m_nurseList; tmp != NULL; tmp = tmp->getNext())
-        m_nurseList = m_nurseList->remove(tmp);
     for (KoalaDoctorList *tmp = m_doctorList; tmp != NULL; tmp = tmp->getNext())
         tmp->getContent()->timeCheck();
-    for (KoalaDoctorList *tmp = m_doctorList; tmp != NULL; tmp = tmp->getNext())
-        m_doctorList = m_doctorList->remove(tmp);
+    m_koalaList->remove(m_koalaList);
+    m_nurseList->remove(m_nurseList);
+    m_doctorList->remove(m_doctorList);
 }
