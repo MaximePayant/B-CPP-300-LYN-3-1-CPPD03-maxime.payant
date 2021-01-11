@@ -7,7 +7,6 @@
 #define SICK_KOALA_HPP
 
 #include <iostream>
-#include <string>
 
 class SickKoala
 {

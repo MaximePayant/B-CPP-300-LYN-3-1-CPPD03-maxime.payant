@@ -7,8 +7,7 @@
 
 SickKoala::SickKoala(const std::string& name) :
 m_name(name)
-{
-}
+{}
 
 SickKoala::~SickKoala()
 {
