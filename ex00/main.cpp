@@ -12,7 +12,9 @@ void cat_file(const char *filename)
     std::string str;
 
     if (!file)
-        std::cerr << "my_cat: file: No such file or directory" << std::endl;
+        std::cerr << "my_cat: "
+        << filename
+        << ": No such file or directory" << std::endl;
     else {
         std::cout << file.rdbuf();
         file.close();
