@@ -37,13 +37,13 @@ void SickKoalaList::append(SickKoalaList *koala)
     }
 }
 
-SickKoalaList *SickKoalaList::getFromName(const std::string& name)
+SickKoala *SickKoalaList::getFromName(const std::string& name)
 {
     SickKoalaList *tmp = this;
 
     while (tmp != NULL) {
         if (tmp->m_value->getName() == name)
-            return (tmp);
+            return (tmp->m_value);
         tmp = tmp->m_next;
     }
     return (NULL);
@@ -72,7 +72,6 @@ SickKoalaList *SickKoalaList::removeFromName(const std::string& name)
     SickKoalaList *prev = this;
     SickKoalaList *tmp = m_next;
 
-    getFromName(name)->m_next = NULL;
     if (m_value->getName() == name)
         return (tmp);
     while (tmp && tmp->m_value->getName() != name) {

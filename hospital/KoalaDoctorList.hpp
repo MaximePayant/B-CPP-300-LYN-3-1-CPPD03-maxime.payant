@@ -24,7 +24,7 @@ class KoalaDoctorList
 
         bool isEnd() const;
         void append(KoalaDoctorList *koala);
-        KoalaDoctorList *getFromName(const std::string& name);
+        KoalaDoctor *getFromName(const std::string& name);
         KoalaDoctorList *remove(KoalaDoctorList *koala);
         KoalaDoctorList *removeFromName(const std::string& name);
         KoalaDoctor *getContent() const;

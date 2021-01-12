@@ -37,13 +37,13 @@ void KoalaDoctorList::append(KoalaDoctorList *koala)
     }
 }
 
-KoalaDoctorList *KoalaDoctorList::getFromName(const std::string& name)
+KoalaDoctor *KoalaDoctorList::getFromName(const std::string& name)
 {
     KoalaDoctorList *tmp = this;
 
     while (tmp != NULL) {
         if (tmp->m_value->getName() == name)
-            return (tmp);
+            return (tmp->m_value);
         tmp = tmp->m_next;
     }
     return (NULL);
@@ -72,7 +72,6 @@ KoalaDoctorList *KoalaDoctorList::removeFromName(const std::string& name)
     KoalaDoctorList *prev = this;
     KoalaDoctorList *tmp = m_next;
 
-    getFromName(name)->m_next = NULL;
     if (m_value->getName() == name)
         return (tmp);
     while (tmp && tmp->m_value->getName() != name) {

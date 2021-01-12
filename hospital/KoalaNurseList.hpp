@@ -24,7 +24,7 @@ class KoalaNurseList
 
         bool isEnd() const;
         void append(KoalaNurseList *koala);
-        KoalaNurseList *getFromID(int id);
+        KoalaNurse *getFromID(int id);
         KoalaNurseList *remove(KoalaNurseList *koala);
         KoalaNurseList *removeFromID(int id);
         KoalaNurse *getContent() const;

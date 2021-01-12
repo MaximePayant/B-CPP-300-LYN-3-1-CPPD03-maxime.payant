@@ -22,7 +22,7 @@ class SickKoalaList
         ~SickKoalaList();
         bool isEnd() const;
         void append(SickKoalaList *koala);
-        SickKoalaList *getFromName(const std::string& name);
+        SickKoala *getFromName(const std::string& name);
         SickKoalaList *remove(SickKoalaList *koala);
         SickKoalaList *removeFromName(const std::string& name);
         SickKoala *getContent() const;

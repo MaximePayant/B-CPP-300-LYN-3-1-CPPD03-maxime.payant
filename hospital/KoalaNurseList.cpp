@@ -37,13 +37,13 @@ void KoalaNurseList::append(KoalaNurseList *koala)
     }
 }
 
-KoalaNurseList *KoalaNurseList::getFromID(int id)
+KoalaNurse *KoalaNurseList::getFromID(int id)
 {
     KoalaNurseList *tmp = this;
 
     while (tmp != NULL) {
         if (tmp->m_value->getID() == id)
-            return (tmp);
+            return (tmp->m_value);
         tmp = tmp->m_next;
     }
     return (NULL);
@@ -72,7 +72,6 @@ KoalaNurseList *KoalaNurseList::removeFromID(int id)
     KoalaNurseList *prev = this;
     KoalaNurseList *tmp = m_next;
 
-    getFromID(id)->m_next = NULL;
     if (m_value->getID() == id)
         return (tmp);
     while (tmp && tmp->m_value->getID() != id) {
