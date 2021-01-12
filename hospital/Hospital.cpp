@@ -16,6 +16,9 @@ Hospital::~Hospital()
 
 void Hospital::addSick(SickKoalaList *koala)
 {
+    for (SickKoalaList *tmp = m_koalaList; tmp != NULL; tmp = tmp->getNext())
+        if (tmp == koala)
+            return;
     if (!m_koalaList)
         m_koalaList = koala;
     else
@@ -29,6 +32,9 @@ void Hospital::addSick(SickKoalaList *koala)
 
 void Hospital::addNurse(KoalaNurseList *nurse)
 {
+    for (KoalaNurseList *tmp = m_nurseList; tmp != NULL; tmp = tmp->getNext())
+        if (tmp == nurse)
+            return;
     if (!m_nurseList)
         m_nurseList = nurse;
     else
@@ -43,6 +49,9 @@ void Hospital::addNurse(KoalaNurseList *nurse)
 
 void Hospital::addDoctor(KoalaDoctorList *doctor)
 {
+    for (KoalaDoctorList *tmp = m_doctorList; tmp != NULL; tmp = tmp->getNext())
+        if (tmp == doctor)
+            return;
     if (!m_doctorList)
         m_doctorList = doctor;
     else

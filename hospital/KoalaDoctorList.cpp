@@ -28,8 +28,11 @@ void KoalaDoctorList::append(KoalaDoctorList *koala)
     if (tmp->m_value == NULL)
         tmp->m_value = koala->m_value;
     else {
-        while (tmp->m_next != NULL)
+        while (tmp->m_next != NULL) {
+            if (tmp == koala)
+                return;
             tmp = tmp->m_next;
+        }
         tmp->m_next = koala;
     }
 }
