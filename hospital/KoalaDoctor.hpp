@@ -17,7 +17,7 @@ const std::string drugs[] =
     "Kinder",
     "Crunch",
     "Maroilles",
-    "Eucalyptus_leaf"
+    "Eucalyptus leaf"
 };
 
 class KoalaDoctor
