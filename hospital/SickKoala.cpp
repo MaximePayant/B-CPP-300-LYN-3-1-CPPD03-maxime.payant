@@ -55,7 +55,7 @@ bool SickKoala::takeDrug(const std::string& drug) const
 void SickKoala::overDrive(std::string str) const
 {
     for (std::size_t check = 0
-    ;(check = str.find("Kreog", check)) != std::string::npos
+    ;(check = str.find("Kreog!", check)) != std::string::npos
     && check < str.size()
     ; check += 1)
         str = str.replace(check, 5, "1337");
